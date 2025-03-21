@@ -3,7 +3,7 @@ import { GoogleReviewsScraper } from './services/scraper';
 import { ReviewAnalyzer } from './services/analysis';
 import { ReviewList } from './components/ReviewList';
 import { AnalysisDisplay } from './components/AnalysisDisplay';
-import { Category, Business, BusinessAnalysis, CategoryAnalysis } from './types/Review';
+import { Category, Business, BusinessAnalysis, CategoryAnalysis, Review } from './types/Review';
 import './App.css';
 
 function App() {
@@ -48,11 +48,11 @@ function App() {
           reviews: businessReviews
         });
         setBusinessAnalysis(analysis);
-      }
 
-      // Analizar la categoría
-      const categoryAnalysis = await analyzer.analyzeCategory(foundBusinesses);
-      setCategoryAnalysis(categoryAnalysis);
+        // Analizar la categoría usando todos los negocios encontrados
+        const catAnalysis = await analyzer.analyzeCategory(foundBusinesses);
+        setCategoryAnalysis(catAnalysis);
+      }
     } catch (error) {
       console.error('Error fetching reviews:', error);
     } finally {

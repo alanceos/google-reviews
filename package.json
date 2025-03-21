@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@types/cheerio": "^0.22.35",
-    "@types/puppeteer": "^5.4.7",
     "axios": "^1.8.4",
     "cheerio": "^1.0.0",
     "puppeteer": "^24.4.0",
@@ -20,6 +19,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@types/puppeteer": "^5.4.7",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",

@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer';
+import * as puppeteer from 'puppeteer';
 import { Business, Review, Category } from '../types/Review';
 
 export class GoogleReviewsScraper {
@@ -6,7 +6,7 @@ export class GoogleReviewsScraper {
 
   async initialize() {
     this.browser = await puppeteer.launch({
-      headless: "new",
+      headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
   }
